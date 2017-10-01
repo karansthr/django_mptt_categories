@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+{% block head_title %} {{ instance.name }} {% endblock %}
+
+{% block content %}
+<br>
+<div class="row">
+  <div class="column">
+
+
+    <div class="text-center"><h2>{{instance.name}}</h2></div>
+
+    {% if  instance.children.all %}
+    <h4>Sub Categories</h4>
+    {% for i in instance.children.all %}
+    <a href="{{ i.slug }}"> {{ i.name }} </a><br>
+    {% endfor %}
+
+    <br><hr>
+    {% endif %}
+
+    {% if  instance.post_set.all %}
+    {% for i in instance.post_set.all %}
+    <h4>Posts</h4>
+    <div class="row small-up-1 medium-up-3" >
+
+      <div class="column">
+        <a href="{{ i.slug }}">
+        <div class="card" style="width: 300px; border-color: black">
+          <div class="card-divider">
+            <strong>{{ i.title | truncatechars:30}}</strong>
+          </div>
+
+          <div class="card-section">
+          <small>{{ i.publish}} </small>
+          <p>{{ i.content | safe | truncatechars_html:120 }}</p>
+          </div>
+        </div>
+        </a>
+      </div>
+      {% endfor %}
+
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<br>
+    <div style="width:100%">
+              {% for instance in posts %}
+
+                  <div style="width:60% ; margin:0 auto;" >
+                        <h3><a  href="/{{ instance.slug  }}">{{instance.title}}</a></h3>
+                        <p>{{ instance.content | safe | truncatechars_html:50  }}</p>
+                        <hr><br>
+                  </div>
+
+                {% endfor %}
+    </div>
+{% endblock %}

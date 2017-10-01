@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load namify %}
+
+{% block content %}
+<br>
+<div class="row">
+  <div class="column">
+    <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+
+        {% for i in instance.get_slug_list_for_categories %}
+           <li><a href="/category/{{ i }}">{{ i | get_name }}</a></li>
+        {% endfor %}
+
+    </ul>
+
+     <div style="width:100%">
+      <div style="width:75% ; margin:0 auto;" >
+
+          <h1><strong> {{instance.title}}</strong></h3>
+                <br>
+          <div > {{ instance.content | safe }}       </div>
+
+     </div>
+  </div>
+</div>
+{% endblock %}

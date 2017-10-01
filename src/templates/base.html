@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html  lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block head_title %} MY SITE {%  endblock head_title %}</title>
+        {% block head_extra %}{% endblock %}
+    </head>
+
+    <style>{% block style %}{% endblock style %}</style>
+     <body>
+
+       <div class="top-bar">
+         <div class="top-bar-left">
+            <a style="color:grey" href="/">MY_SITE</a>
+         </div>
+         <div class="top-bar-right">
+           <h4><small> A Tech Blog </small></h6>
+         </div>
+       </div>
+
+        {% block content %}
+
+        {% endblock content %}
+
+
+    </body>
+
+    <link  rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+    <script  src="{% static 'js/vendor/jquery.js' %}"></script>
+    <script  src="{% static 'js/vedor/what-input.js' %}"></script>
+    <script  src="{% static 'js/foundation.min.js'%}"></script>
+</html>
