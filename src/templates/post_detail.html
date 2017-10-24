@@ -9,7 +9,7 @@
     <ul class="breadcrumbs">
         <li><a href="/">Home</a></li>
 
-        {% for i in instance.get_slug_list_for_categories %}
+        {% for i in instance.category.get_slug_list %}
            <li><a href="/category/{{ i }}">{{ i | get_name }}</a></li>
         {% endfor %}
 
