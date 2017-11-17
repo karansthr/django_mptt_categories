@@ -12,5 +12,5 @@ It is django project that illustrates how to implement categories in a django si
 7) Run the server ``` python3 manage.py runserver  ```
 
 If you want to add posts and categories then goto localhost:[port]/admin and login with username = password = djangopy 
-or you can create new user with ```python python3  manage.py createsuperuser ```
+or you can create new user with ```python3  manage.py createsuperuser ```
  
